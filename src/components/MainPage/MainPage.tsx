@@ -1,6 +1,7 @@
 import { StackItem, Text, Typography, VStack } from '@channel.io/bezier-react'
 
 import UserEmailForm from '../UserEmailForm'
+import Footer from '../Footer'
 import * as Styled from './MainPage.styled'
 
 function MainPage() {
@@ -22,7 +23,9 @@ function MainPage() {
           <StackItem align="stretch" marginBefore={30}>
             <UserEmailForm />
           </StackItem>
-          <StackItem marginBefore={20}>footer</StackItem>
+          <StackItem marginBefore={20}>
+            <Footer />
+          </StackItem>
         </VStack>
       </Styled.Wrapper>
     </Styled.Main>

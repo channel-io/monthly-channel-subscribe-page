@@ -13,4 +13,13 @@ export const GlobalStyle = createGlobalStyle`
       system-ui,
       sans-serif;
   }
+
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
 `
