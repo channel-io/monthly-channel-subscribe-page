@@ -12,6 +12,9 @@ export const GlobalStyle = createGlobalStyle`
       'Roboto',
       system-ui,
       sans-serif;
+
+    margin: 0;
+    padding: 0;
   }
 
   h1 {
