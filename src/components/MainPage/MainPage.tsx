@@ -8,22 +8,26 @@ function MainPage() {
   return (
     <Styled.Main>
       <Styled.Wrapper>
-        <VStack align="center" spacing={12}>
+        <VStack align="center" spacing={40}>
           <StackItem>
-            <Styled.H1>월간 채널</Styled.H1>
+            <VStack spacing={12} align="center">
+              <StackItem>
+                <Styled.H1>월간 채널</Styled.H1>
+              </StackItem>
+              <StackItem>
+                <Text as="p" typo={Typography.Size22} color="txt-black-darker" bold>
+                  다양한 기술 소식을 공유합니다.
+                </Text>
+                <Text as="p" typo={Typography.Size22} color="txt-black-darker" bold>
+                  이메일 구독을 통해 매달 받아볼 수 있습니다.
+                </Text>
+              </StackItem>
+            </VStack>
           </StackItem>
-          <StackItem>
-            <Text as="p" typo={Typography.Size22} color="txt-black-darker" bold>
-              다양한 기술 소식을 공유합니다.
-            </Text>
-            <Text as="p" typo={Typography.Size22} color="txt-black-darker" bold>
-              이메일 구독을 통해 매달 받아볼 수 있습니다.
-            </Text>
-          </StackItem>
-          <StackItem align="stretch" marginBefore={30}>
+          <StackItem align="stretch">
             <UserEmailForm />
           </StackItem>
-          <StackItem marginBefore={20}>
+          <StackItem>
             <Footer />
           </StackItem>
         </VStack>

@@ -1,12 +1,16 @@
 import { useCallback, useState } from 'react'
 import {
   Button,
+  ButtonColorVariant,
+  ButtonSize,
+  ButtonStyleVariant,
   FormControl,
   FormLabel,
   HStack,
   StackItem,
   Text,
   TextField,
+  TextFieldSize,
   TextFieldType,
   Typography,
 } from '@channel.io/bezier-react'
@@ -44,11 +48,19 @@ function UserEmailForm() {
               placeholder="email@example.com"
               value={userEmail}
               onChange={handleChangeUserEmail}
+              size={TextFieldSize.L}
             />
           </FormControl>
         </StackItem>
         <StackItem align="end">
-          <Button type="submit" text="월간 채널 구독하기" disabled={userEmail === ''} />
+          <Button
+            type="submit"
+            styleVariant={ButtonStyleVariant.Primary}
+            colorVariant={ButtonColorVariant.Blue}
+            size={ButtonSize.L}
+            text="월간 채널 구독하기"
+            disabled={userEmail === ''}
+          />
         </StackItem>
       </HStack>
     </form>
