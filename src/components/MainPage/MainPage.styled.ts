@@ -9,9 +9,10 @@ export const Main = styled.main`
     170deg,
     ${({ foundation }) => foundation?.theme['bgtxt-navy-lighter']},
     ${({ foundation }) => foundation?.theme['bgtxt-navy-light']} 20%,
-    ${({ foundation }) => foundation?.theme['bgtxt-navy-normal']} 80%,
+    ${({ foundation }) => foundation?.theme['bgtxt-navy-normal']} 75%,
     ${({ foundation }) => foundation?.theme['bgtxt-navy-dark']} 95%
   );
+  opacity: 0.9;
 `
 
 export const Wrapper = styled.div`
