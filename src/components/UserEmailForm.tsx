@@ -5,6 +5,7 @@ import {
   ButtonSize,
   ButtonStyleVariant,
   FormControl,
+  FormErrorMessage,
   FormLabel,
   HStack,
   StackItem,
@@ -14,9 +15,12 @@ import {
   TextFieldType,
   Typography,
 } from '@channel.io/bezier-react'
+import { AxiosError } from 'axios'
+import { registerEmail } from '../api'
 
 function UserEmailForm() {
   const [userEmail, setUserEmail] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleChangeUserEmail = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +32,15 @@ function UserEmailForm() {
   const handleSubmitUserEmail = useCallback(
     (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault()
-      console.log(userEmail)
+      registerEmail(userEmail)
+        .then(() => {})
+        .catch((error: AxiosError) => {
+          if (error.response?.status === 400) {
+            setErrorMessage('이메일 형식이 올바르지 않습니다.')
+          } else {
+            setErrorMessage('알 수 없는 에러가 발생했습니다.')
+          }
+        })
     },
     [userEmail]
   )
@@ -44,12 +56,14 @@ function UserEmailForm() {
               </Text>
             </FormLabel>
             <TextField
-              type={TextFieldType.Email}
+              // type={TextFieldType.Email}
               placeholder="email@example.com"
               value={userEmail}
               onChange={handleChangeUserEmail}
               size={TextFieldSize.L}
+              hasError={!!errorMessage}
             />
+            {errorMessage && <FormErrorMessage>hey</FormErrorMessage>}
           </FormControl>
         </StackItem>
         <StackItem align="end">
