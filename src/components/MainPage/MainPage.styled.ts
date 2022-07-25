@@ -2,6 +2,7 @@ import { styled } from '@channel.io/bezier-react'
 
 export const Main = styled.main`
   height: 100vh;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
