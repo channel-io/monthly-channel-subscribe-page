@@ -1,5 +1,6 @@
-import { StackItem, Text, Typography, VStack } from '@channel.io/bezier-react'
+import { HStack, StackItem, Text, Typography, VStack } from '@channel.io/bezier-react'
 
+import { ChSymbolPush } from '../../assets'
 import UserEmailForm from '../UserEmailForm'
 import Footer from '../Footer'
 import * as Styled from './MainPage.styled'
@@ -10,9 +11,16 @@ function MainPage() {
       <Styled.Wrapper>
         <VStack align="center" spacing={40}>
           <StackItem>
-            <VStack spacing={12} align="center">
+            <VStack spacing={20} align="center">
               <StackItem>
-                <Styled.H1>월간 채널</Styled.H1>
+                <HStack spacing={12} align="center">
+                  <StackItem>
+                    <Styled.H1>월간 채널</Styled.H1>
+                  </StackItem>
+                  <StackItem>
+                    <img src={ChSymbolPush} width={42} />
+                  </StackItem>
+                </HStack>
               </StackItem>
               <StackItem>
                 <Text as="p" typo={Typography.Size22} color="txt-black-darker" bold>

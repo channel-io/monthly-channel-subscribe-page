@@ -26,5 +26,5 @@ export const Wrapper = styled.div`
 `
 
 export const H1 = styled.h1`
-  font-size: 38px;
+  font-size: 34px;
 `
