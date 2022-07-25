@@ -58,7 +58,7 @@ function UserEmailForm() {
             styleVariant={ButtonStyleVariant.Primary}
             colorVariant={ButtonColorVariant.Blue}
             size={ButtonSize.L}
-            text="월간 채널 구독하기"
+            text="구독하기"
             disabled={userEmail === ''}
           />
         </StackItem>
